@@ -1,10 +1,11 @@
-Analise o print da AIC e extraia os dados estritamente para o formato JSON (lista []).
-Use EXATAMENTE estas 27 chaves para cada objeto:
+Analise a AIC e extraia os dados estritamente para JSON (lista []).
+Use EXATAMENTE estas 28 chaves:
 
-Nome, Trecho, Fixo_A_key, Fixo_B_key, Fixo_A_Coord, Fixo_B_Coord, Fixo_A_Lat, Fixo_A_Lon, Fixo_B_Lat, Fixo_B_Lon, Semi_largura, AltMax, AltMin, AltComp, AltMaxA_to_B, AltMinA_to_B, AltCompA_to_B, AltMaxB_to_A, AltMinB_to_A, AltCompB_to_A, Direção, RumoA_to_B, RumoB_to_A, Classe, FCA, limite_key, eixokey.
+Nome, Trecho, Fixo_A_key, Fixo_B_key, Fixo_A_Coord, Fixo_B_Coord, Fixo_A_Lat, Fixo_A_Lon, Fixo_B_Lat, Fixo_B_Lon, Semi_largura, AltMax, AltMin, AltComp, AltMaxA_to_B, AltMinA_to_B, AltCompA_to_B, AltMaxB_to_A, AltMinB_to_A, AltCompB_to_A, Direção, RumoA_to_B, RumoB_to_A, Classe, FCA, ATS, limite_key, eixokey.
 
-REGRAS RÍGIDAS:
-1. Fixo_A_Coord e Fixo_B_Coord: Devem conter a Latitude e Longitude DMS separadas por espaço (Ex: "22º39'49\"S 043º15'10\"W").
-2. Fixo_A_Lat, Fixo_A_Lon, Fixo_B_Lat, Fixo_B_Lon: Deixe como null.
-3. Não utilize aspas duplas dentro das strings de coordenada, use apenas o caractere de segundos (").
-4. Responda APENAS o JSON puro.
+REGRAS DE EXTRAÇÃO:
+1. Trecho: Atribua um número sequencial inteiro (1, 2, 3...) para cada segmento da rota.
+2. Fixo_A_key e Fixo_B_key: Use o NOME do fixo (ex: SNTG, AMERICANA). Não use a numeração de referência do mapa.
+3. Frequências: Separe FCA e ATS nas colunas correspondentes conforme indicado na tabela da AIC.
+4. Coordenadas: Mantenha o formato DMS (ex: 22º39'49"S 047º19'04"W).
+5. Valores Numéricos: Nas colunas de altitude e rumo, extraia apenas os algarismos.
