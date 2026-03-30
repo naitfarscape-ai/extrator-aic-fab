@@ -1,11 +1,12 @@
-Analise a AIC e extraia os dados estritamente para JSON (lista []).
-Use EXATAMENTE estas 28 chaves:
+Analise a imagem da AIC e extraia os dados para JSON (lista []).
+Use EXATAMENTE estas 31 chaves:
 
-Nome, Trecho, Fixo_A_key, Fixo_B_key, Fixo_A_Coord, Fixo_B_Coord, Fixo_A_Lat, Fixo_A_Lon, Fixo_B_Lat, Fixo_B_Lon, Semi_largura, AltMax, AltMin, AltComp, AltMaxA_to_B, AltMinA_to_B, AltCompA_to_B, AltMaxB_to_A, AltMinB_to_A, AltCompB_to_A, Direção, RumoA_to_B, RumoB_to_A, Classe, FCA, ATS, limite_key, eixokey.
+Nome, Trecho, Tipo, Fixo_A_key, Fixo_A_tipo, Fixo_B_key, Fixo_B_tipo, Fixo_A_Coord, Fixo_B_Coord, Fixo_A_Lat, Fixo_A_Lon, Fixo_B_Lat, Fixo_B_Lon, Semi_largura, AltMax, AltMin, AltComp, AltMaxA_to_B, AltMinA_to_B, AltCompA_to_B, AltMaxB_to_A, AltMinB_to_A, AltCompB_to_A, Direção, RumoA_to_B, RumoB_to_A, Classe, FCA, ATS, limite_key, eixokey.
 
-REGRAS DE EXTRAÇÃO:
-1. Trecho: Atribua um número sequencial inteiro (1, 2, 3...) para cada segmento da rota.
-2. Fixo_A_key e Fixo_B_key: Use o NOME do fixo (ex: SNTG, AMERICANA). Não use a numeração de referência do mapa.
-3. Frequências: Separe FCA e ATS nas colunas correspondentes conforme indicado na tabela da AIC.
-4. Coordenadas: Mantenha o formato DMS (ex: 22º39'49"S 047º19'04"W).
-5. Valores Numéricos: Nas colunas de altitude e rumo, extraia apenas os algarismos.
+REGRAS DE INTERPRETAÇÃO VISUAL:
+1. Tipo (Retângulo entre fixos): Se branco, use "RECOMENDADO". Se escuro/preto, use "OBRIGATÓRIO".
+2. Fixo_A_tipo e Fixo_B_tipo (Triângulos): Se o triângulo for branco, use "A PEDIDO". Se for escuro/preto, use "COMPULSÓRIO".
+3. Trecho: Numeração sequencial (1, 2, 3...).
+4. Fixo_A_key e Fixo_B_key: Use o NOME do fixo (ex: SNTG).
+5. FCA e ATS: Extraia as frequências correspondentes.
+6. Valores Numéricos: Apenas algarismos em altitudes e rumos.
