@@ -1,0 +1,11 @@
+Analise o print da AIC de corredores visuais (REA/REH). Extraia os dados e organize-os estritamente num formato JSON (lista de objetos []). 
+
+Cada objeto deve conter exatamente as seguintes chaves:
+Nome, Trecho, Fixo_A_key, Fixo_B_key, Fixo_A_Coord, Fixo_B_Coord, Fixo_A_Lat, Fixo_A_Lon, Fixo_B_Lat, Fixo_B_Lon, Semi_largura, AltMax, AltMin, AltComp, AltMaxA_to_B, AltMinA_to_B, AltCompA_to_B, AltMaxB_to_A, AltMinB_to_A, AltCompB_to_A, Direção, RumoA_to_B, RumoB_to_A, Classe, FCA, limite_key, eixokey.
+
+Regras de Preenchimento:
+1. Fixo_A_Coord e Fixo_B_Coord: Extrair em formato DMS (ex: 22º39'49"S / 043º15'10"W).
+2. Fixo_A_Lat, Fixo_A_Lon, Fixo_B_Lat, Fixo_B_Lon: Deixar como null (o script fará a conversão).
+3. Altitudes e Rumos: Extrair apenas os valores numéricos.
+4. Campos ausentes: Caso a informação não conste na imagem, preencher com null.
+5. Formatação: Retorne apenas o código JSON puro, sem explicações ou blocos de Markdown.
